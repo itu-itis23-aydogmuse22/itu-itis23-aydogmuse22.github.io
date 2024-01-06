@@ -1,0 +1,178 @@
+:root {
+    --t1-c1: #21897E;
+    --t1-c2: #8980F5;
+
+    --t2-c1: #04395E;
+    --t2-c2: #D5896F;
+
+    --t3-c1: #EAF2E3;
+    --t3-c2: #F25757;
+
+    --t4-c1: #A2D729;
+    --t4-c2: #342E37;
+
+    --t5-c1: #739E82;
+    --t5-c2: #2C5530;
+
+    --t6-c1: #e66465;
+    --t6-c2: #9198e5;
+
+    --t7-c1: #779FA1;
+    --t7-c2: #564154;
+
+    --t9-c1: #87B38D;
+    --t9-c2: #CC76A1;
+
+    --t8-c1: #04395E;
+    --t8-c2: #FF007F;
+}
+
+
+
+body {
+    font-family: Inter;
+    color: #333;
+    line-height: 1.5;
+    height: 98vb;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+.page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+
+    border: rgb(255, 255, 255) solid 5px;
+  
+    background: rgb(255, 255, 255);
+    padding: 6rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.top-part {
+    height: 40px;
+    width: 100%;
+}
+
+
+.top-right {
+    background: linear-gradient(to top left,var(--t6-c1), var(--t6-c2));
+    width: 40px;
+    height: 100%;
+    float: right;
+    border-radius: 27px;
+    border-color: #505050;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.top-part h1 {
+    font-size: 26px;
+    border-left: #505050 solid 3px;
+    padding-left: 10px;
+}
+
+.top-right p {
+    font-size: 9px;
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    padding-top: 14.4px;
+}
+
+.edit_button {
+    float: right;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    
+    border-style: solid;
+    border-color: #505050;
+    border-width: 3px;
+    padding: 0;
+    margin: 0;
+}
+
+.edit_button:hover .fa-pen-to-square {
+    color: #ddd;
+    
+    
+ }
+
+ .fa-pen-to-square {
+    color: #505050;
+    transition: 0.75s ease-out;
+    
+ }
+
+ .edit_button:hover {
+    cursor: pointer;
+ }
+
+
+
+
+.card {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    border-width: 3px;
+}
+
+
+.letterM {
+    background: url(images/M.svg);
+}
+
+.letterE {
+    background: url(images/E.svg);
+}
+
+.letterS {
+    background: url(images/S.svg);
+}
+
+.letterI {
+    background: url(images/I.svg);
+}
+
+.hidden {
+    background: black;
+}
+
+.cards {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 100px;
+    width: 518px;
+}
+
+button {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 81px;
+    height: 25px;
+}
+
+.buttons {
+}

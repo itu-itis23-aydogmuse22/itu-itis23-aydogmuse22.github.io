@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/da1ce5ebb6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="game.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <script>
+        window.onload = function() {
+            document.body.style.background = themes[0];
+            document.getElementById("btn").style.background = themes[0];
+            
+        };
+
+        let themeIndex = 0;
+        const themes = ['linear-gradient(to top left, #21897E, #8980F5)','linear-gradient(to top left, #04395E, #D5896F)','linear-gradient(to top left, #EAF2E3, #F25757)','linear-gradient(to top left, #A2D729, #342E37)','linear-gradient(to top left, #739E82, #2C5530)','linear-gradient(to top left, #e66465, #9198e5)','linear-gradient(to top left, #779FA1, #564154)','linear-gradient(to top left, #87B38D, #CC76A1)','linear-gradient(to top left, #04395E, #FF007F)','linear-gradient(to top left, #ff00ff, #00ffff)', 'linear-gradient(to top left, #ffa500, #ff69b4)', 'linear-gradient(to top left, #800080, #008080)', ];
+
+        function changeTheme() {
+        themeIndex = (themeIndex + 1) % themes.length;
+        document.body.style.background = themes[themeIndex];
+        document.getElementById("btn").style.background = themes[themeIndex];
+        }
+
+        const lettersC = ["letterM", "letterE", "letterS", "letterS", "letterI"];
+        const cards = ["card1", "card2", "card3", "card4", "card5"]
+        let letters = ["letterM", "letterE", "letterS", "letterS", "letterI"];
+        let lost = false
+        let move_count = 0
+        let move = ""
+        let shuffle_count = 0
+        let score = 0
+        const answer = "MESSI"
+        let started = false;
+
+        function shuffle_array(array) {
+        let currentIndex = array.length,  randomIndex;
+
+        while (currentIndex > 0) {
+
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+        }
+
+        function shuffle_cards() {
+            letters = shuffle_array(letters)
+            for(let i = 0; i < letters.length; i++) {
+                document.getElementById(cards[i]).classList.remove(lettersC[i]);
+                document.getElementById(cards[i]).classList.add(letters[i]);
+            }
+        }
+
+        function unshuffle_cards() {
+            letters = shuffle_array(letters)
+            for(let i = 0; i < letters.length; i++) {
+                document.getElementById(cards[i]).classList = "";
+                document.getElementById(cards[i]).classList.add("card");
+                document.getElementById(cards[i]).classList.add(lettersC[i]);
+            }
+        }
+
+        function button1() {
+            if (started) {
+                if (move === answer.slice(0,move_count) & move_count < 5 & document.getElementById("card1").className.split(" ")[1][6] === answer[move_count]) {
+                    move_count++;
+                    move += document.getElementById("card1").className.split(" ")[1][6];
+                    score += 20;
+                    document.getElementById('score').textContent = "Score: " + score;
+                    console.log(score);
+                    if (move_count === 5) {
+                        started = false;
+                        unhide();
+                    }
+                } else if (document.getElementById("card1").className.split(" ")[1][6] !== answer[move_count]) {
+                    started = false;
+                    unhide();
+                }
+            }
+        }
+
+        function button2() {
+            if (started) {
+                if (move === answer.slice(0,move_count) & move_count < 5 & document.getElementById("card2").className.split(" ")[1][6] === answer[move_count]) {
+                    move_count++;
+                    move += document.getElementById("card2").className.split(" ")[1][6];
+                    score += 20;
+                    document.getElementById('score').textContent = "Score: " + score;
+                    console.log(score);
+                    if (move_count === 5) {
+                        started = false;
+                        unhide();
+                    }
+                } else if (document.getElementById("card2").className.split(" ")[1][6] !== answer[move_count]) {
+                    started = false;
+                    unhide();
+                }
+            }
+        }
+
+        function button3() {
+            if (started) {
+                if (move === answer.slice(0,move_count) & move_count < 5 & document.getElementById("card3").className.split(" ")[1][6] === answer[move_count]) {
+                    move_count++;
+                    move += document.getElementById("card3").className.split(" ")[1][6];
+                    score += 20;
+                    document.getElementById('score').textContent = "Score: " + score;
+                    console.log(score);
+                    if (move_count === 5) {
+                        started = false;
+                        unhide();
+                    }
+                } else if (document.getElementById("card3").className.split(" ")[1][6] !== answer[move_count]) {
+                    started = false;
+                    unhide();
+                }
+            }
+        }
+
+        function button4() {
+            if (started) {
+                if (move === answer.slice(0,move_count) & move_count < 5 & document.getElementById("card4").className.split(" ")[1][6] === answer[move_count]) {
+                    move_count++;
+                    move += document.getElementById("card4").className.split(" ")[1][6];
+                    score += 20;
+                    document.getElementById('score').textContent = "Score: " + score;
+                    console.log(score);
+                    if (move_count === 5) {
+                        started = false;
+                        unhide();
+                    }
+                } else if (document.getElementById("card4").className.split(" ")[1][6] !== answer[move_count]) {
+                    started = false;
+                    unhide();
+                }
+            }
+        }
+
+        function button5() {
+            
+            if (started) {
+                if (move === answer.slice(0,move_count) & move_count < 5 & document.getElementById("card5").className.split(" ")[1][6] === answer[move_count]) {
+                    move_count++;
+                    move += document.getElementById("card5").className.split(" ")[1][6];
+                    score += 20;
+                    document.getElementById('score').textContent = "Score: " + score;
+                    console.log(score);
+                    if (move_count === 5) {
+                        started = false;
+                        unhide();
+                    }
+                } else if (document.getElementById("card5").className.split(" ")[1][6] !== answer[move_count]) {
+                    started = false;
+                    unhide();
+                }
+            }
+        }
+
+        function hide () {
+            for(let i = 0; i < letters.length; i++) {
+                document.getElementById(cards[i]).classList.add("hidden");
+                move_count = 0;
+                move = "";
+            }
+        }
+
+        function unhide () {
+            for(let i = 0; i < letters.length; i++) {
+                document.getElementById(cards[i]).classList.remove("hidden");
+                move_count = 0;
+                move = "";
+            }
+        }
+
+        function start_game() {
+            score = 0;
+            document.getElementById('score').textContent = "Score: " + score;
+            if (shuffle_count === 0) {
+                shuffle_count++;
+                shuffle_cards();
+            }
+            setTimeout(() => {
+                hide();
+            }, 2000);
+            started = true
+        }
+
+        function restart() {
+            unshuffle_cards();
+            shuffle_count = 0;
+            unhide();
+            setTimeout(() => {
+                start_game();
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div class="top-part">
+            <button id="btn" class="edit_button" onclick="changeTheme()">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </button> 
+        </div>
+        <div class="cards">
+            <button class="card letterM" id="card1" onclick="button1()"></button>
+            <button class="card letterE" id="card2" onclick="button2()"></button>
+            <button class="card letterS" id="card3" onclick="button3()"></button>
+            <button class="card letterS" id="card4" onclick="button4()"></button>
+            <button class="card letterI" id="card5" onclick="button5()"></button>
+        </div>
+        <div class="buttons">
+            <button class="start-button btn" onclick="start_game()">Start Game</button>
+            <button class="restart-button btn" onclick="restart()">Restart</button>
+            <button id="score" class="score-button btn">Score: 0</button>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

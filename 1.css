@@ -1,0 +1,109 @@
+:root {
+    --t1-c1: #031D44;
+    --t1-c2: #04395E;
+    --t1-c3: #70A288;
+    --t1-c4: #DAB785;
+    --t1-c5: #D5896F;
+}
+
+body {
+    font-family: Roboto;
+    color: #333;
+    line-height: 1.5;
+    height: 100vb;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: linear-gradient(to top left,#0E1428, #7B9E89);
+  }
+
+.page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+  
+    background-color: #d1a57c;
+    padding: 6rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.top-part {
+    height: 40px;
+    width: 100%;
+}
+
+
+.top-right {
+    background: linear-gradient(#e66465, #9198e5);;
+    width: 40px;
+    height: 100%;
+    float: right;
+}
+
+.photo-div {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.photo {
+    height: 95px;
+    width: 95px;
+    border-radius: 55px;
+    border-color: linear-gradient(to top left,#0E1428, #7B9E89);;
+    border-style: solid;
+    border-width: 5px;
+    object-fit: contain;
+    left: 50%;
+}
+
+.name-div {
+    margin-top: -5px;
+    width: 100%;
+    height: 38px;
+    
+    display: flex;
+    justify-content: center; 
+    
+}
+
+.name {
+    border-bottom: #0E1428 solid 3px;
+    padding-bottom: 28px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 20px;
+    color: #0E1428;
+}
+
+.bio {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    border: none
+}
+
+.bio h1 {
+    border-left: #0E1428 solid 3px;
+    padding-left: 5px;
+}
+
+p {
+    font-family: ;
+}
+
+
