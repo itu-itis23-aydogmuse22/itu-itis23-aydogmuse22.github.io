@@ -33,6 +33,7 @@
         let score = 0
         const answer = "MESSI"
         let started = false;
+        let play = true;
 
         function shuffle_array(array) {
         let currentIndex = array.length,  randomIndex;
@@ -179,17 +180,21 @@
         }
 
         function start_game() {
-            score = 0;
-            document.getElementById('score').textContent = "Score: " + score;
-            if (shuffle_count === 0) {
-                shuffle_count++;
-                shuffle_cards();
+            if (play) {
+                score = 0;
+                document.getElementById('score').textContent = "Score: " + score;
+                if (shuffle_count === 0) {
+                    shuffle_count++;
+                    shuffle_cards();
+                }
+                setTimeout(() => {
+                    hide();
+                }, 2000);
+                started = true;
+                play = false;
             }
-            setTimeout(() => {
-                hide();
-            }, 2000);
-            started = true
-        }
+            }
+            
 
         function restart() {
             unshuffle_cards();
